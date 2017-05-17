@@ -1,0 +1,61 @@
+<html>
+	<head>
+	<title>Example jQuery 2</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<style type="text/css">
+		.div_1 {
+			border: 1px solid white;
+		}
+		.div_2 {
+			border: 2px solid gray;
+		}
+		.div_3 {
+			border: 3px solid blue;
+		}
+	</style>
+	</head>
+	<body>
+		
+		<div id="idDiv1" class="div_1">
+			<button id="button1">Click 1</button><hr>
+			<button id="button2">Click 2</button><hr>
+			<button id="button3">Click 3</button><hr>
+			<button id="button4">Click 4</button><hr>
+			<hr>
+			<button id="button5">Click 5</button><hr>
+		</div>
+		
+		<br/>
+		
+		<div id="idDiv2" class="div_2">
+			DIV v&iacute;ctima!!
+		</div>
+
+		<script type="text/javascript">
+			// Segunda forma de utilizar jQuery
+			$(document).ready(function(){
+				$("#button1").click(function(){
+					alert("Click en el boton 1");
+				});
+
+				$("#button2").click(function(){
+					$("#idDiv2").hide(2000).show(1000);
+				});
+
+				$("#button3").click(function(){
+					$("#idDiv2").attr("style", "border: 2px solid green;color: red;");
+				});
+
+				$("#button4").click(function(){
+					$("body").append("<div id='idDiv3' class='div_3' >Nuevo DIV</div>");
+				});
+
+				$("#button5").mouseover(function(){
+					alert("Posa el raton sobre el boton 5");
+				});
+
+			});
+		</script>
+
+	</body>
+</html>

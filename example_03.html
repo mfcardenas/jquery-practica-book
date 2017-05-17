@@ -1,0 +1,52 @@
+<html>
+	<head>
+	<title>Example jQuery 2</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	</head>
+	<body>
+		
+		<div id="idDiv1" class="div_1">
+			<form id="form" action="#" method="GET" >
+				<fieldset>
+					<legend>Informacion Personal:</legend>
+			    	<label for="nombre">Nombres:*</label>
+			    	<input type="text" id="nombre" name="nombre" value="" placeholder="Nombre"><br>
+			    	<label for="apellido">Apellidos:*</label>
+			    	<input type="text" id="apellido" name="apellido" value="" placeholder="Apellidos"><br>
+			    	<input type="submit" value="Submit">
+			  	</fieldset>
+			</form> 
+		</div>
+		<hr>
+		<div id="data"></div>
+
+		<script type="text/javascript">
+			// Segunda forma de utilizar jQuery
+			$(document).ready(function(){
+				$("#nombre").change(function(){
+					var nombre = $(this).val();
+					alert("El nombre es: " + nombre);
+				});
+
+				$("#apellido").change(function(){
+					var apellido = $(this).val();
+					alert("El apellido es: " + apellido);
+				});
+
+				$("#form").submit(function(){
+					var nombre = $("#nombre").val();
+					var apellido = $("#apellido").val();
+
+					if (nombre != '' && apellido != '') {
+						$('#data').html("<b>Nombre:</b> " + nombre + " <b>Apellidos: </b> " + apellido);
+					}else {
+						alert("Rellene los campos");
+					}
+					return false;
+				})
+
+			});
+		</script>
+
+	</body>
+</html>
